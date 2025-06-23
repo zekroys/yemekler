@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sitesi Şablonu</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+        header { background: #222; color: #fff; padding: 20px 0; text-align: center; }
+        nav { background: #444; padding: 10px 0; text-align: center; }
+        nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        main { max-width: 900px; margin: 30px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        footer { background: #222; color: #fff; text-align: center; padding: 15px 0; position: fixed; width: 100%; bottom: 0; }
+        /* CSS eklemesi */
+        .yemekler-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 32px;
+            justify-content: center;
+        }
+        .yemek-kart {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            padding: 24px;
+            width: 100%;
+            max-width: 410px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .yemek-kart img {
+            width: 100%;
+            max-width: 270px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        .yemek-kart img.baylan-rotate,
+        .yemek-kart img.kusgozu-rotate,
+        .yemek-kart img.asi-rotate {
+            transform: rotate(-90deg);
+        }
+        .yemek-kart img.kusgozu-rotate {
+            transform: rotate(90deg);
+        }
+        .yemek-kart .ortalama {
+            background: #f4f4f4;
+            border-radius: 8px;
+            padding: 8px 0;
+            margin-top: 12px;
+            font-weight: bold;
+            color: #222;
+        }
+        @media (max-width: 900px) {
+            .yemekler-grid { grid-template-columns: 1fr; }
+            .yemek-kart { max-width: 95vw; }
+        }
+        @media (max-width: 600px) {
+            main { padding: 10px; }
+            nav a { display: block; margin: 10px 0; }
+            .yemek-kart img { height: 240px; max-width: 95vw; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hoş Geldiniz</h1>
+        <p>Belkız ve Yiğitin Yemek Maceraları</p>
+    </header>
+    <nav>
+        <a href="#" onclick="showSection('yemekler')">Yemekler</a>
+    </nav>
+    <main>
+        <section id="yemekler">
+            <h2>Birlikte Yediğimiz Yemekler</h2>
+            <div class="yemekler-grid">
+                <div class="yemek-kart">
+                    <img src="https://i.imgur.com/m4tHsCY.jpeg" alt="Basta" />
+                    <h3>Kuzu Hamburger ve Kuzu Dürüm</h3>
+                    <p><strong>Restoran:</strong> Basta Street Food Bar</p>
+                    <p><strong>Belkız'ın Puanı:</strong> </p>
+                    <p><strong>Yiğit'in Puanı:</strong> </p>
+                    <p class="ortalama"><strong>Ortalama:</strong> </p>
+                </div>
+                <div class="yemek-kart">
+                    <img src="https://i.imgur.com/FWkQzv2.jpeg" alt="Asi Künefe" class="asi-rotate" />
+                    <h3>Asi Künefe</h3>
+                    <p><strong>Restoran:</strong> Asi Künefe</p>
+                    <p><strong>Belkız'ın Puanı:</strong> </p>
+                    <p><strong>Yiğit'in Puanı:</strong> </p>
+                    <p class="ortalama"><strong>Ortalama:</strong> </p>
+                </div>
+                <div class="yemek-kart">
+                    <img src="https://i.imgur.com/SZbTbw5.jpeg" alt="Kuşgözü Lahmacun" class="kusgozu-rotate" />
+                    <h3>Kuşgözü Lahmacun</h3>
+                    <p><strong>Restoran:</strong> Kuşgözü Lahmacun</p>
+                    <p><strong>Belkız'ın Puanı:</strong> </p>
+                    <p><strong>Yiğit'in Puanı:</strong> </p>
+                    <p class="ortalama"><strong>Ortalama:</strong> </p>
+                </div>
+                <div class="yemek-kart">
+                    <img src="https://i.imgur.com/bXdqSh1.jpeg" alt="Aboov Kebap" />
+                    <h3>Aboov Kebap</h3>
+                    <p><strong>Restoran:</strong> Aboov Kebap</p>
+                    <p><strong>Belkız'ın Puanı:</strong> </p>
+                    <p><strong>Yiğit'in Puanı:</strong> </p>
+                    <p class="ortalama"><strong>Ortalama:</strong> </p>
+                </div>
+                <div class="yemek-kart">
+                    <img src="https://i.imgur.com/LepA1PE.jpeg" alt="Nişantaşı Pizzacı" />
+                    <h3>Nişantaşı'ndaki Pizzacı</h3>
+                    <p><strong>Restoran:</strong> Nişantaşı'ndaki Pizzacı</p>
+                    <p><strong>Belkız'ın Puanı:</strong> </p>
+                    <p><strong>Yiğit'in Puanı:</strong> </p>
+                    <p class="ortalama"><strong>Ortalama:</strong> </p>
+                </div>
+                <div class="yemek-kart">
+                    <img src="https://i.imgur.com/VC9z1BW.jpeg" alt="Doyuyo" />
+                    <h3>Doyuyo</h3>
+                    <p><strong>Restoran:</strong> Doyuyo</p>
+                    <p><strong>Belkız'ın Puanı:</strong> </p>
+                    <p><strong>Yiğit'in Puanı:</strong> </p>
+                    <p class="ortalama"><strong>Ortalama:</strong> </p>
+                </div>
+                <div class="yemek-kart">
+                    <img src="https://i.imgur.com/pcauYoO.jpeg" alt="Baylan Pastanesi" class="baylan-rotate" />
+                    <h3>Baylan Pastanesi</h3>
+                    <p><strong>Restoran:</strong> Baylan Pastanesi</p>
+                    <p><strong>Belkız'ın Puanı:</strong> </p>
+                    <p><strong>Yiğit'in Puanı:</strong> </p>
+                    <p class="ortalama"><strong>Ortalama:</strong> </p>
+                </div>
+                <div class="yemek-kart">
+                    <img src="https://i.imgur.com/D3PfFNA.jpeg" alt="Tezgah Sokak Lezzetleri" />
+                    <h3>Tezgah Sokak Lezzetleri</h3>
+                    <p><strong>Restoran:</strong> Tezgah Sokak Lezzetleri</p>
+                    <p><strong>Belkız'ın Puanı:</strong> </p>
+                    <p><strong>Yiğit'in Puanı:</strong> </p>
+                    <p class="ortalama"><strong>Ortalama:</strong> </p>
+                </div>
+                <div class="yemek-kart">
+                    <img src="https://i.imgur.com/n7J2A5u.jpeg" alt="Kuğu Pastanesi" />
+                    <h3>Kuğu Pastanesi</h3>
+                    <p><strong>Restoran:</strong> Kuğu Pastanesi</p>
+                    <p><strong>Belkız'ın Puanı:</strong> </p>
+                    <p><strong>Yiğit'in Puanı:</strong> </p>
+                    <p class="ortalama"><strong>Ortalama:</strong> </p>
+                </div>
+                <div class="yemek-kart">
+                    <img src="https://i.imgur.com/N1CzX6X.jpeg" alt="Antalya Kahvaltıcı" />
+                    <h3>Antalya Kahvaltıcı</h3>
+                    <p><strong>Restoran:</strong> Antalya Kahvaltıcı</p>
+                    <p><strong>Belkız'ın Puanı:</strong> </p>
+                    <p><strong>Yiğit'in Puanı:</strong> </p>
+                    <p class="ortalama"><strong>Ortalama:</strong> </p>
+                </div>
+                <div class="yemek-kart">
+                    <img src="https://i.imgur.com/aoUbmvl.jpeg" alt="Beşiktaş Portekiz" />
+                    <h3>Beşiktaş Portekiz</h3>
+                    <p><strong>Restoran:</strong> Beşiktaş Portekiz</p>
+                    <p><strong>Belkız'ın Puanı:</strong> </p>
+                    <p><strong>Yiğit'in Puanı:</strong> </p>
+                    <p class="ortalama"><strong>Ortalama:</strong> </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Sadece yemekler bölümü var, diğerleri kaldırıldı
+        function showSection(sectionId) {
+            document.getElementById('yemekler').style.display = 'block';
+        }
+        // Sayfa yüklendiğinde otomatik olarak yemekler bölümünü göster
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('yemekler');
+        });
+    </script>
+    <footer>
+        &copy; 2025 Web Sitesi. Tüm hakları saklıdır.
+    </footer>
+</body>
+</html>
